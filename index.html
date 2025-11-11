@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InnerVerse OS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top left, #0b1222, #000);
+      color: #e2e8f0;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 0.3em;
+      background: linear-gradient(90deg, #6ee7b7, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      font-size: 1.1em;
+      color: #a0aec0;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+    form {
+      margin-top: 2em;
+    }
+    input {
+      padding: 10px 14px;
+      font-size: 1em;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      width: 250px;
+      margin-right: 8px;
+    }
+    button {
+      background: linear-gradient(90deg, #6366f1, #06b6d4);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .note {
+      margin-top: 1em;
+      font-size: 0.9em;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>InnerVerse OS</h1>
+  <p>An AI-powered self-mastery system that listens to your thoughts and trains your presence.</p>
+
+  <form onsubmit="saveEmail(event)">
+    <input type="email" id="email" placeholder="you@example.com" required>
+    <button type="submit">Join Waitlist</button>
+  </form>
+
+  <div class="note" id="message"></div>
+
+  <script>
+    function saveEmail(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      localStorage.setItem('innerverse_waitlist_email', email);
+      document.getElementById('message').textContent =
+        '✨ Thanks for joining! You’re on the waitlist.';
+    }
+  </script>
+
+</body>
+</html>
